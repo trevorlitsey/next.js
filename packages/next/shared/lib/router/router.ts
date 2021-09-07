@@ -82,7 +82,7 @@ function addPathPrefix(path: string, prefix?: string) {
   return prefix && path.startsWith('/')
     ? path === '/'
       ? normalizePathTrailingSlash(prefix)
-      : `${prefix}${pathNoQueryHash(path) === '/' ? path.substring(1) : path}`
+      : `${prefix}${pathNoQueryHash(path) === '/' && !process.env.__NEXT_TRAILING_SLASH  ? path.substring(1) : path}`
     : path
 }
 
