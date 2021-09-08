@@ -188,7 +188,7 @@ export function runNextCommandDev(argv, stdOut, opts = {}) {
     __NEXT_TEST_MODE: 'true',
     ...opts.env,
   }
-
+  console.log(env)
   const nodeArgs = opts.nodeArgs || []
   return new Promise((resolve, reject) => {
     const instance = spawn(

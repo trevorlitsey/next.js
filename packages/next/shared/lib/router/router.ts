@@ -78,7 +78,7 @@ function buildCancellationError() {
   })
 }
 
-function addPathPrefix(path: string, prefix?: string) {
+export function addPathPrefix(path: string, prefix?: string) {  
   return prefix && path.startsWith('/')
     ? path === '/'
       ? normalizePathTrailingSlash(prefix)
@@ -160,7 +160,7 @@ export function hasBasePath(path: string): boolean {
 }
 
 export function addBasePath(path: string): string {
-  // we only add the basepath on relative urls
+  // we only add the basepath on relative urls  
   return addPathPrefix(path, basePath)
 }
 
